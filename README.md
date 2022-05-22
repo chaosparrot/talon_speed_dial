@@ -1,4 +1,4 @@
-Talon Speed dial ![Image of keypad](images/active_dial_two.png)
+Talon Speed dial
 =====
 
 Easily create and use voice command macros with Talon Voice without opening your text editor.
