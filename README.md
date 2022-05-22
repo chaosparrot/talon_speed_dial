@@ -4,8 +4,6 @@ Talon Speed dial
 Easily create and use voice command macros with Talon Voice without opening your text editor.
 This bundle is heavily improved by installing it alongside the [Talon HUD](https://github.com/chaosparrot/talon_hud) (v0.6 and up) as all of the user interface is implemented for it. But it isn't required for the basic functionality.
 
-This bundle requires only the number_small capture from knausj_talon, so if you do not use that bundle, consider copying the number_small capture from that repository.
-
 ## Table of contents
 1. [Features](#features)
 2. [Voice commands](#voice-commands)
