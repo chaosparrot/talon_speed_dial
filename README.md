@@ -76,7 +76,7 @@ The tag user.speed_dial_shortcuts denotes whether or not the shortcuts are enabl
 
 ### Parrot noises
 
-For parrot noises, you definitely need the Talon Beta. More information about parrot can be found [on the github]() or in the #parrot slack channel inside the Talon Voice slack community.
+For parrot noises, you definitely need the Talon Beta. More information about parrot can be found [on the parrot.py github]() or in the #parrot slack channel inside the Talon Voice slack community.
 If you have it set up, you can update the noises.talon file to activate the first speed dial using a palatal tongue click.
 
 ```
