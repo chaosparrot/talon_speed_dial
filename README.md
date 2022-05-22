@@ -1,4 +1,4 @@
-Talon Speed dial
+Talon Speed dial ![Image of keypad](images/active_dial_two.png)
 =====
 
 Easily create and use voice command macros with Talon Voice without opening your text editor.
@@ -39,7 +39,7 @@ This also makes it easier to filter out the commands from the macroable commands
 `speed dial options` opens up the Talon HUD choice menu of all available macros. You can navigate and select the voice commands you want to activate when you activate the macro.
 
 `speed dial` activates the first speed dial.
-`speed dial <name>` activates any of the speed dials - By default the names are one up to ten, but they can be changed in the speedial_preferences.csv that is generated on the first run.
+`speed dial <name>` activates any of the speed dials - By default the names are one up to ten, but they can be changed in the speed_dial_config.csv that is generated on the first run.
 
 `speed dial last` sets the previous command as the first speed dial.
 `speed dial last <number>` sets the previous <number> commands as the first speed dial.
