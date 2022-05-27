@@ -1,6 +1,6 @@
 not mode: sleep
 tag: user.speed_dial_shortcuts
-# and tag: user.remove_this_line_to_enable_numpad_shortcuts
+and tag: user.remove_this_line_to_enable_numpad_shortcuts
 -
 key(keypad_7): user.speed_dial_activate("one", "keystroke")
 key(keypad_8): user.speed_dial_activate("two", "keystroke")
