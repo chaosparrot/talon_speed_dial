@@ -25,6 +25,7 @@ class SpeedDialManager:
     sleep_job = None
     shortcuts_enabled = True
     noises_enabled = True
+    dial_job = None
 
     # Talon HUD variables
     enabled = False
@@ -62,19 +63,23 @@ class SpeedDialManager:
         if dial in self.speed_dials and len(self.speed_dials[dial]["commands"]) > 0:
             if self.hud_available and self.enabled:
                 self.hud_update_status_icon(dial, True, type == "mouseclick")
-        
             if type == "keystroke":
-                actions.sleep(0.2)
-            
-            for command in self.speed_dials[dial]["commands"]:
                 actions.sleep(0.1)
-                # Talon Speed dial mimics the commands here - If an error occurred, you might be in the wrong context for that command
-                actions.mimic(command)
-                
-            if self.hud_available and self.enabled:
-                self.hud_update_status_icon(dial, False, type == "mouseclick")
-        elif self.hud_available and self.enabled:
-            actions.user.hud_add_log("warning", "<*Speed dial " + dial + "/>")
+            cron.after("100ms", lambda self=self, dial=dial: self.run_dial_commands(dial))
+
+    def run_dial_commands(self, dial):
+        active_app = ui.active_app().name
+        active_app_changed = False
+        for command in self.speed_dials[dial]["commands"]:
+            actions.sleep(0.1 if not active_app_changed else 0.25)
+            # Talon Speed dial mimics the commands here - If an error occurred, you might be in the wrong context for that command
+            actions.mimic(command)
+            active_app_changed = ui.active_app().name != active_app
+            if active_app_changed:
+                active_app = ui.active_app().name
+
+        if self.hud_available and self.enabled:
+            self.hud_update_status_icon(dial, False, type == "mouseclick")
 
     def configure_dial(self, commands: list[str] = None, dial: str = None):
         global dirname
